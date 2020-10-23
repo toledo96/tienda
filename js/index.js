@@ -7,16 +7,92 @@ $(document).ready(function () {
             llenarCarrito(response);
         }
     });
+    $.ajax({
+        type:"post",
+        url:"ajax/leerCarrito.php",
+        dataType:"json",
+        success: function(response){
+            llenarTablaCarrito(response);
+        }
+    });
+
+    function llenarTablaCarrito(response){
+        $("#tablaCarrito tbody").text("");
+        var TOTAL = 0;
+        response.forEach(element => {
+            var precio = parseFloat(element['precio']);
+            var totalProd = element['cantidad'] * precio;
+            TOTAL = TOTAL + totalProd;
+            $("#tablaCarrito tbody").append(
+                `
+                <tr>
+                    <td> <img src="${element['web_path']}" class="img-size-50"> </td>
+                    <td> ${element['nombre']} </td>
+                    <td> 
+                        ${element['cantidad']} 
+                        <button type="button" class="btn-xs btn-primary mas" data-id="${element['id']}" data-tipo="mas">+</button>
+                        <button type="button" class="btn-xs btn-danger menos" data-id="${element['id']}" data-tipo="menos">-</button>
+                    </td>
+                    <td> $${precio.toFixed(2)} </td>
+                    <td>$${totalProd.toFixed(2)}</td>
+                    <td><i class="fa fa-trash text-danger borrarProducto" data-id="${element['id']}"></i></td>
+                <tr>
+                `
+            );
+        });
+        $("#tablaCarrito tbody").append(
+            `
+                <tr>
+                    <td colspan="4" class="text-right"><b>Total:</b></td>
+                    <td>$${TOTAL.toFixed(2)}</td>
+                    <td></td>
+                <tr>
+            `
+        );
+    }
+
+    $(document).on("click",".mas,.menos",function(e){
+        e.preventDefault();
+        var id=$(this).data('id');
+        var tipo = $(this).data('tipo');
+        $.ajax({
+            type:"post",
+            url:"ajax/cambiarCantidadProductos.php",
+            data:{"id":id,"tipo":tipo},
+            dataType:"json",
+            success: function(response){
+                llenarTablaCarrito(response);
+                llenarCarrito(response);
+            }
+        });       
+    }); 
+
+    $(document).on("click",".borrarProducto",function(e){
+        e.preventDefault();
+        var id=$(this).data('id');
+        $.ajax({
+            type:"post",
+            url:"ajax/borrarProductoCarrito.php",
+            data:{"id":id},
+            dataType:"json",
+            success: function(response){
+                llenarTablaCarrito(response);
+                llenarCarrito(response);
+            }
+        });       
+    }); 
+
     $("#agregarCarrito").click(function (e) {
         e.preventDefault();
         var id = $(this).data('id');
         var nombre = $(this).data('nombre');
         var web_path = $(this).data('web_path');
         var cantidad = $("#cantidadProducto").val();
+        var precio = $(this).data('precio');
         $.ajax({
             type: "post",
             url: "ajax/agregarCarrito.php",
-            data: { "id": id, "nombre": nombre, "web_path": web_path, "cantidad": cantidad },
+            data: { "id": id, "nombre": nombre, "web_path": web_path, "cantidad": cantidad,"precio":precio },
             dataType: "json",
             success: function (response) {
                 llenarCarrito(response);
@@ -61,7 +137,11 @@ $(document).ready(function () {
         });
 
         $("#listaCarrito").append(
-            `<a href="#" class="dropdown-item dropdown-footer text-danger" id="borrarCarrito">Borrar productos <i class="fa fa-trash"></i> </a>`
+            `
+            <a href="index.php?modulo=carrito" class="dropdown-item dropdown-footer text-primary">Ver productos <i class="fa fa-cart-plus"></i> </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item dropdown-footer text-danger" id="borrarCarrito">Borrar productos <i class="fa fa-trash"></i> </a>
+            `
         );
         
 
@@ -78,6 +158,18 @@ $(document).ready(function () {
             }
         });
     }); 
+
+
+    var nombreCli = $("#nombreCli").val();
+    var emailCli = $("#emailCli").val();
+    var direccionCli = $("#direccionCli").val();
+    var estadoCli = $("#estadoCli").val();
+    var municipioCli = $("#municipioCli").val();
+    $().click(function(e){
+        e.preventDefault();
+
+    });
+
 });
 
 

@@ -250,7 +250,7 @@ $modulo = $_REQUEST['modulo'] ?? '';
   <script src="dist/js/pages/dashboard.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="dist/js/demo.js"></script>
-  <!-- <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="plugins/datatables/jquery.dataTables.min.js"></script>
   <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
   <script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
   <script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
@@ -270,8 +270,8 @@ $modulo = $_REQUEST['modulo'] ?? '';
         "responsive": true,
       });
     });
-  </script> -->
-  <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+  </script>
+  <!-- <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
     <script src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js"></script>
     <script src="js/dataTables.editor.min.js"></script>
@@ -353,7 +353,7 @@ $modulo = $_REQUEST['modulo'] ?? '';
             });
 
         });
-    </script>
+    </script> -->
 
 
 

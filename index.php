@@ -16,7 +16,15 @@
     <!-- Google Font: Source Sans Pro -->
     <!-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,200&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>Inicio</title>
+    <?php
+        session_start();
+        $accion = $_REQUEST['accion']??''; 
+        if($accion == 'cerrar'){
+            session_destroy();
+            header("Refresh:0");
+        }
+    ?>
 </head>
 
 <body>
@@ -28,71 +36,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <nav class="navbar navbar-expand navbar-dark">
-                    <!-- Left navbar links -->
-                    <ul class="navbar-nav">
-                        <li class="nav-item d-none d-sm-inline-block">
-                            <a href="index.php" class="nav-link">Home</a>
-                        </li>
-                        <li class="nav-item d-none d-sm-inline-block">
-                            <a href="#" class="nav-link">Contact</a>
-                        </li>
-                    </ul>
-
-                    <!-- SEARCH FORM -->
-                    <form class="form-inline ml-3" action="index.php">
-                        <div class="input-group input-group-sm">
-                            <input class="form-control form-control-navbar bg-gray" type="search" placeholder="Search" aria-label="Search" name="nombre" value="<?php echo $_REQUEST['nombre'] ?? ''; ?>">
-                            <input type="hidden" name="modulo" value="productos">
-                            <div class="input-group-append">
-                                <button class="btn btn-navbar" type="submit">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-
-                    <!-- Right navbar links -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Messages Dropdown Menu -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" data-toggle="dropdown" href="#" id="iconoCarrito">
-                                <i class="fa fa-cart-plus" aria-hidden="true"></i>
-                                <span class="badge badge-danger navbar-badge" id="badgeProducto"></span>
-                            </a>
-                            <!-- aqui -->
-                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" id="listaCarrito">
-                                <!-- <a href="#" class="dropdown-item dropdown-footer">See All Messages</a> -->
-                            </div>
-                        </li>
-                        <!-- Notifications Dropdown Menu -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" data-toggle="dropdown" href="#">
-                                <i class="far fa-user"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                                <span class="dropdown-item dropdown-header">15 Notifications</span>
-                                <div class="dropdown-divider"></div>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-envelope mr-2"></i> 4 new messages
-                                    <span class="float-right text-muted text-sm">3 mins</span>
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-users mr-2"></i> 8 friend requests
-                                    <span class="float-right text-muted text-sm">12 hours</span>
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-file mr-2"></i> 3 new reports
-                                    <span class="float-right text-muted text-sm">2 days</span>
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-                            </div>
-                        </li>
-                    </ul>
-                </nav>
+            <?php
+                require_once "menu.php";
+            ?>
             </div>
         </div>
 
@@ -103,6 +49,12 @@
         }
         if ($modulo == "detalleproducto") {
             include_once "detalleProducto.php";
+        }
+        if ($modulo == "carrito") {
+            include_once "carrito.php";
+        }
+        if ($modulo == "envio") {
+            include_once "envio.php";
         }
         ?>
 

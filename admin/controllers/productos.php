@@ -43,7 +43,7 @@ Editor::inst( $db, 'productos','id_product' )
             ->link( 'files.id', 'productos_files.file_id' )
             ->fields(
                 Field::inst( 'id' )
-                    ->upload( Upload::inst( $_SERVER['DOCUMENT_ROOT'].'/freddy2/upload/__ID__.__EXTN__' )
+                    ->upload( Upload::inst( $_SERVER['DOCUMENT_ROOT'].'/freddy/upload/__ID__.__EXTN__' ) //aqui le cambias
                         ->db( 'files', 'id', array(
                             'filename'    => Upload::DB_FILE_NAME,
                             'filesize'    => Upload::DB_FILE_SIZE,

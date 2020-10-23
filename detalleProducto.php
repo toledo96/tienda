@@ -117,7 +117,7 @@
                           data-id=" <?php echo $_REQUEST['id']?>"
                           data-nombre="<?php echo $rowProducto->name; ?>" 
                           data-web_path="<?php echo $rowPrimerImagen->web_path; ?>"
-                          data-precio="<?php echo $rowPrimerImagen->precio; ?>"> 
+                          data-precio="<?php echo $rowProducto->price; ?>"> 
                           
                               <i class="fas fa-cart-plus fa-lg mr-2"></i>
                               Add to Cart
