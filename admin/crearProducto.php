@@ -25,7 +25,7 @@ if (isset($_REQUEST['crear'])) {
     $num_archivos = count($_FILES['imagen']['name']);
     $padre = dirname(__DIR__);
     $resultado = str_replace('\\', '/', $padre);
-    $carpeta = "/freddy";
+    $carpeta = "/freddy"; //cambiar por el nombre de la carpeta donde esta el proyecto
     $respuesta = 0;
 
     //tengo que hacer lo de id_producto y id_file

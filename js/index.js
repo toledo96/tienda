@@ -160,15 +160,6 @@ $(document).ready(function () {
     }); 
 
 
-    var nombreCli = $("#nombreCli").val();
-    var emailCli = $("#emailCli").val();
-    var direccionCli = $("#direccionCli").val();
-    var estadoCli = $("#estadoCli").val();
-    var municipioCli = $("#municipioCli").val();
-    $().click(function(e){
-        e.preventDefault();
-
-    });
 
 });
 
