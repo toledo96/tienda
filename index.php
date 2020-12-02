@@ -18,31 +18,36 @@
     <!-- Google Font: Source Sans Pro -->
     <!-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,200&display=swap" rel="stylesheet">
+        <!-- jQuery -->
+    <script src="admin/plugins/jquery/jquery.min.js"></script>
     <title>Inicio</title>
     <?php
-        session_start();
-        $accion = $_REQUEST['accion']??''; 
-        if($accion == 'cerrar'){
-            session_destroy();
-            header("Refresh:0");
-        }
+    session_start();
+    $accion = $_REQUEST['accion'] ?? '';
+    if ($accion == 'cerrar') {
+        session_destroy();
+        header("Refresh:0");
+    }
     ?>
 </head>
 
 <body>
     <?php
     include_once "admin/db_ecommerce.php";
-
     ?>
-    
+
+    <?php
+    require_once "menu.php";
+    ?>
+
     <div class="container">
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-12">
             <?php
-                require_once "menu.php";
+            require_once "menu.php";
             ?>
             </div>
-        </div>
+        </div> -->
 
         <?php
         $modulo = $_REQUEST['modulo'] ?? '';
@@ -64,7 +69,11 @@
         if ($modulo == "factura") {
             include_once "factura.php";
         }
-        
+
+        if ($modulo == "usuario") {
+            include_once "usuario.php";
+        }
+
         ?>
 
 
@@ -73,8 +82,7 @@
     </div>
 
 
-    <!-- jQuery -->
-    <script src="admin/plugins/jquery/jquery.min.js"></script>
+
     <!-- jQuery UI 1.11.4 -->
     <script src="admin/plugins/jquery-ui/jquery-ui.min.js"></script>
     <!-- Bootstrap 4 -->
@@ -95,6 +103,53 @@
         function cambiarImagen(imagen) {
             imagenGrande.src = imagen.src;
         }
+    </script>
+        <script>
+        $(document).ready(function() {
+            let dropdown = $('#estados');
+            dropdown.empty();
+            dropdown.append('<option selected="true" disabled>Estados</option>')
+
+            let municipio = $('#municipios');
+            municipio.empty();
+            municipio.append('<option selected="true" disabled>Municipios</option>')
+
+            var estado;
+
+            $.ajax({
+                type: "GET",
+                url: "https://api-sepomex.hckdrk.mx/query/get_estados",
+                dataType: "json",
+                success: function(data) {
+                    var datos = data.response.estado;
+
+                    $.each(datos, function(i, item) {
+                        var option = "<option>" + item + "</option";
+                        $("#estados").append(option);
+                    });
+
+                    $('#estados').on('change', function() {
+                        estado = dropdown.val();
+                        console.log(estado)
+                        $.ajax({
+                            type: "GET",
+                            url: "https://api-sepomex.hckdrk.mx/query/get_municipio_por_estado/" + estado,
+                            dataType: "json",
+                            success: function(data) {
+                                municipio.empty();
+                                var datos = data.response.municipios;
+                                $.each(datos, function(i, item) {
+                                    var option = "<option>" + item + "</option";
+                                    $("#municipios").append(option);
+                                });
+                            }
+
+                        })
+                    });
+
+                },
+            });
+        });
     </script>
 </body>
 

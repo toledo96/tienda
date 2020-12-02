@@ -1,8 +1,5 @@
 <?php
 
-// echo $_SERVER["DOCUMENT_ROOT"]."<br>";
-// echo "\nLa ruta del padre es: $resultado"."<br>";
-
 if (isset($_REQUEST['crear'])) {
     include_once 'db_ecommerce.php';
 

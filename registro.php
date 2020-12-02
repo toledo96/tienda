@@ -83,7 +83,7 @@
                 ?>
                 <form action="" method="post">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="name" placeholder="Nombre completo">
+                        <input type="text" class="form-control" name="name" placeholder="Nombre completo" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>
@@ -91,7 +91,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control" name="email" placeholder="Email">
+                        <input type="email" class="form-control" name="email" placeholder="Email" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -99,7 +99,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" name="password" placeholder="Password">
+                        <input type="password" class="form-control" name="password" placeholder="Password" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -107,7 +107,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="address" placeholder="direccion">
+                        <input type="text" class="form-control" name="address" placeholder="direccion" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>
@@ -115,7 +115,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="cellphone" placeholder="Telefono">
+                        <input type="text" class="form-control" name="cellphone" placeholder="Telefono" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>
@@ -123,11 +123,11 @@
                         </div>
                     </div>
                     <div class="form-group mb-3">
-                        <select class="form-control" name="state" id="estados">
+                        <select class="form-control" name="state" id="estados" required>
                         </select>
                     </div>
                     <div class="form-group mb-3">
-                        <select class="form-control" name="municipality" id="municipios">
+                        <select class="form-control" name="municipality" id="municipios" required>
                         </select>
                     </div>
                     <div class="row">

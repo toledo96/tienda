@@ -41,34 +41,36 @@ if (isset($_SESSION['idClient'])) {
 
 ?>
 
-    <form method="POST">
+    <form class="mb-3" method="POST">
         <div class="container mt-3">
             <div class="row">
                 <div class="col-md-12">
                     <h2 class="text-center">Datos del cliente</h2>
                     <div class="form-group">
                         <label for="">Nombre (persona que recibira el producto)</label>
-                        <input type="text" class="form-control" name="nombreCli" value="<?php echo $result2->name; ?>">
+                        <input type="text" class="form-control" name="nombreCli" value="<?php echo $result2->name; ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="">Email</label>
-                        <input type="text" class="form-control" name="emaiCli" value="<?php echo $result2->email; ?>">
+                        <input type="text" class="form-control" name="emaiCli" value="<?php echo $result2->email; ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="">Dirección</label>
-                        <textarea name="direccionCli" class="form-control" cols="30" rows="5"><?php echo $result2->address; ?></textarea>
+                        <textarea name="direccionCli" class="form-control" cols="30" rows="5" required><?php echo $result2->address; ?></textarea>
                     </div>
                     <div class="form-group">
                         <label for="">Teléfono</label>
-                        <input type="text" class="form-control" name="telefonoCli" value="<?php echo $result2->cellphone; ?>">
+                        <input type="text" class="form-control" name="telefonoCli" value="<?php echo $result2->cellphone; ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="">Estado</label>
-                        <input type="text" class="form-control" name="estadoCli" value="<?php echo $result2->state; ?>">
+                       
+                        <select class="form-control" name="state" id="estados" required></select>
                     </div>
                     <div class="form-group">
                         <label for="">Municipio</label>
-                        <input type="text" class="form-control" name="municipioCli" value="<?php echo $result2->municipality; ?>">
+                        <select class="form-control" name="municipality" id="municipios" required>
+                        </select>
                     </div>
                 </div>
             </div>
@@ -90,3 +92,4 @@ if (isset($_SESSION['idClient'])) {
 }
 
 ?>
+

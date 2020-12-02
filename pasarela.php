@@ -1,3 +1,4 @@
+<div class="container">
 <form action="index.php?modulo=factura" method="post" id="payment-form">
     <table class="table table-striped table-inverse" id="tablaPasarela">
 
@@ -42,3 +43,4 @@
     <a class="btn btn-warning" href="index.php?modulo=envio">Ir a envio</a>
     <button type="submit" class="btn btn-primary float-right">Pagar</button>
 </form>
+</div>
