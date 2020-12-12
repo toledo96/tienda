@@ -73,8 +73,8 @@
 
                     ?>
 
-                        <div class="alert alert-primary" role="alert">
-                            <b>Registro realizado</b> <a href="login.php">Ir al login</a>
+                        <div class="alert alert-danger" role="alert">
+                            <b>Error! el email ya existe</b>
                         </div>
 
                 <?php
