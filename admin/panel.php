@@ -102,12 +102,12 @@ $modulo = $_REQUEST['modulo'] ?? '';
                 <p>Ecommerce </p>
               </a>
               <ul class="nav nav-treeview">
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                   <a href="panel.php?modulo=estadisticas" class="nav-link <?php echo ($modulo == "estadisticas" || $modulo == "") ? " active" : " "; ?>">
                     <i class="far fa-chart-bar nav-icon"></i>
                     <p>Estadisticas</p>
                   </a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                   <a href="panel.php?modulo=usuarios" class="nav-link <?php echo ($modulo == "usuarios" || $modulo == "crearUsuario" || $modulo == "editarUsuario") ? " active" : " "; ?>">
                     <i class="far fa-user nav-icon"></i>

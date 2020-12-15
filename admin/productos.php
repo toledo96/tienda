@@ -81,7 +81,6 @@
                                         <th>Nombre</th>
                                         <th>Precio</th>
                                         <th>Existencia</th>
-                                        <th>Imagenes</th>
                                         <th>Descripcion</th>
                                         <th>Acciones
                                             <a href="panel.php?modulo=crearProducto"><i class="fa fa-plus"></i></a>
@@ -100,7 +99,6 @@
                                             <td><?php echo $result->name ?></td>
                                             <td><?php echo $result->price ?></td>
                                             <td><?php echo $result->exist ?></td>
-                                            <td></td>
                                             <td><?php echo $result->description ?></td>
                                             <td>
                                                 <a href="panel.php?modulo=editarUsuario&id=<?php echo $result->id_product; ?>" style="margin-right:10px"><i class="fas fa-edit"></i></a>

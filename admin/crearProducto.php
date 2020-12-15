@@ -107,41 +107,41 @@ if (isset($_REQUEST['crear'])) {
                             <form action="panel.php?modulo=crearProducto" method="POST" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="">Nombre</label>
-                                    <input type="text" name="name" id="name" placeholder="Nombre" class="form-control">
+                                    <input type="text" name="name" id="name" placeholder="Nombre" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Precio</label>
-                                    <input type="text" name="price" placeholder="Precio" class="form-control">
+                                    <input type="text" name="price" placeholder="Precio" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Existencia</label>
-                                    <input type="text" name="exist" placeholder="Existencia" class="form-control">
+                                    <input type="text" name="exist" placeholder="Existencia" class="form-control" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="">Descripción</label>
-                                    <textarea type="text" name="description" placeholder="descripción" rows="3" class="form-control"></textarea>
+                                    <textarea type="text" name="description" placeholder="descripción" rows="3" class="form-control" required></textarea>
                                 </div>
 
 
                                 <div class="form-group">
                                     <label for="exampleFormControlFile1">Imagen</label>
-                                    <input type="file" class="form-control-file" name="imagen[]" id="exampleFormControlFile1">
+                                    <input type="file" class="form-control-file" name="imagen[]" id="exampleFormControlFile1" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="exampleFormControlFile1">Imagen</label>
-                                    <input type="file" class="form-control-file" name="imagen[]" id="exampleFormControlFile1">
+                                    <input type="file" class="form-control-file" name="imagen[]" id="exampleFormControlFile1" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="exampleFormControlFile1">Imagen</label>
-                                    <input type="file" class="form-control-file" name="imagen[]" id="exampleFormControlFile1">
+                                    <input type="file" class="form-control-file" name="imagen[]" id="exampleFormControlFile1" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="exampleFormControlFile1">Imagen</label>
-                                    <input type="file" class="form-control-file" name="imagen[]" id="exampleFormControlFile1">
+                                    <input type="file" class="form-control-file" name="imagen[]" id="exampleFormControlFile1" required>
                                 </div>
 
                                 <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" name="crear">Crear producto</button>

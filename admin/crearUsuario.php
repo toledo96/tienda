@@ -55,19 +55,19 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="">Nombre</label>
-                                    <input type="text" name="name" id="name" placeholder="Nombre" class="form-control">
+                                    <input type="text" name="name" id="name" placeholder="Nombre" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Username</label>
-                                    <input type="text" name="username" placeholder="Usuario" class="form-control">
+                                    <input type="text" name="username" placeholder="Usuario" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Email</label>
-                                    <input type="text" name="email" placeholder="Email" class="form-control">
+                                    <input type="text" name="email" placeholder="Email" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Contraseña</label>
-                                    <input type="password" name="password" placeholder="Contraseña" class="form-control">
+                                    <input type="password" name="password" placeholder="Contraseña" class="form-control" required>
                                 </div>
 
                                 <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" name="crear">Crear usuario</button>
