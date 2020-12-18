@@ -72,6 +72,12 @@
 
         if ($modulo == "usuario") {
             include_once "usuario.php";
+        }    
+        if ($modulo == "contacto") {
+            include_once "contacto.php";
+        }
+        if ($modulo == "nosotros") {
+            include_once "nosotros.php";
         }
 
         ?>
@@ -96,6 +102,7 @@
     <script src="admin/dist/js/pages/dashboard.js"></script>
     <script src="js/index.js"></script>
     <script src="js/index2.js"></script>
+    <script src="js/boton.js"></script>
     <script src="js/stripe.js"></script>
     <script>
         var imagenGrande = document.getElementById("grande");

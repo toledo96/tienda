@@ -29,11 +29,17 @@
 
     <div class="mb-3">
         <h4>Terminos y condiciones</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi nulla accusamus obcaecati sed? Ut corrupti laboriosam omnis quos odit unde dolore dicta, dolores, voluptatem beatae quasi doloribus reiciendis? Recusandae, minus.</p>
+        <p>
+        El usuario acepta los terminos y condiciones de uso del sito web AgroInc al realizar su compra, guardaremos sus datos personales de su cuenta para poder realizar el cobro en el portal
+        de stripe y asi mismo poder mandar la informacion necesaria para hacer llegar el producto hasta el domicilio que se ha seleccionado. <br>
+        1. Las compras relizadas en el e-comerce no pueden ser cambiadas en los usuarios unas vez aceptada la compra. <br>
+        2. Los datos de envio seleccionados no pueden ser remplazados por otros datos de envio. <br>
+        3. El nombre del usuario tiene que coincidir con la persona que recibe el paquete en el domicilio. <br>
+        </p>
         <div class="form-check">
             <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="">
-            Acepto los terminos y condiciones
+            <input type="checkbox" id="check" class="form-check-input" value="1">
+            Acepto los temrinos y condiciones del e-comerce AgroInc
             </label>
 
         </div>
@@ -41,6 +47,6 @@
 
 
     <a class="btn btn-warning" href="index.php?modulo=envio">Ir a envio</a>
-    <button type="submit" class="btn btn-primary float-right">Pagar</button>
+    <button type="submit" class="btn btn-primary float-right " id="boton-pagar">Pagar</button>
 </form>
 </div>
